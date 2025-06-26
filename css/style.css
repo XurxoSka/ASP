@@ -1,0 +1,548 @@
+/* Variables CSS para facilitar la gestión de colores y fuentes */
+:root {
+    --primary-color: #A36A00; /* Un tono de madera oscuro o dorado, similar al logo */
+    --secondary-color: #2c3e50; /* Un azul grisáceo oscuro para texto o fondos contrastantes */
+    --accent-color: #e67e22; /* Un naranja vibrante para llamadas a la acción o highlights */
+    --light-bg: #f8f8f8; /* Fondo claro para secciones */
+    --dark-bg: #34495e; /* Fondo oscuro para footer o secciones específicas */
+    --text-color: #333;
+    --light-text-color: #eee;
+    --font-heading: 'Roboto Slab', serif; /* Una fuente con serifa para títulos, le da un toque clásico y profesional */
+    --font-body: 'Open Sans', sans-serif; /* Una fuente sans-serif legible para el cuerpo del texto */
+}
+
+/* Importar fuentes de Google Fonts (puedes elegir otras si lo prefieres) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto+Slab:wght@400;700&display=swap');
+
+/* Reset y estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3.2em;
+    text-align: center;
+    color: var(--light-text-color);
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px; /* Ajusta según el tamaño de tu logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    overflow: hidden; /* Oculta partes de la imagen si se desbordan */
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://via.placeholder.com/1920x800/2c3e50/ffffff?text=IMAGEN:+Taller+de+carpinter%C3%ADa+moderno+con+carpintero') no-repeat center center/cover; /* Placeholder AI Image */
+    z-index: -1;
+    filter: brightness(0.6); /* Oscurece la imagen para que el texto resalte */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Sections generales */
+section {
+    padding: 80px 0;
+}
+
+section:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+/* Services Section */
+.services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.services .service-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.services .service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: #fff;
+    overflow: hidden; /* Para las imágenes placeholder */
+}
+
+.services .service-icon img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Para que los iconos placeholder se vean blancos */
+}
+
+/* Puedes usar URLs de placeholder para los iconos mientras generas los reales */
+.services .service-item:nth-child(1) .service-icon { background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=DOOR') no-repeat center center/70%; }
+.services .service-item:nth-child(2) .service-icon { background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=GARDEN') no-repeat center center/70%; }
+.services .service-item:nth-child(3) .service-icon { background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=FURNITURE') no-repeat center center/70%; }
+.services .service-item:nth-child(4) .service-icon { background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=REPAIR') no-repeat center center/70%; }
+
+
+.services .service-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.projects .project-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.projects .project-item:hover {
+    transform: translateY(-5px);
+}
+
+.projects .project-image {
+    width: 100%;
+    height: 250px; /* Altura fija para las imágenes del proyecto */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-text-color);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Placeholder AI Images for projects */
+.projects .project-item:nth-child(1) .project-image {
+background: url(../img/foto2.png);
+background-size: cover;
+}
+.projects .project-item:nth-child(2) .project-image {
+    background-image: url(../img/foto1.png);
+    background-size: cover;
+}
+.projects .project-item:nth-child(3) .project-image {
+    background-image: url(../img/foto3.png);
+    background-size: cover;
+}
+
+.projects .project-item h3 {
+    margin-top: 20px;
+    color: var(--primary-color);
+}
+
+.projects .project-item p {
+    padding: 0 20px 20px;
+}
+
+.projects .btn-secondary {
+    margin-top: 40px;
+    text-align: center;
+    display: block; /* Para centrar el botón */
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* About Section */
+.about .about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
+}
+
+.about .about-image {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    background: url('https://via.placeholder.com/400x500/2c3e50/ffffff?text=IMAGEN:+Retrato+Americo+Sueiro') no-repeat center center/cover; /* Placeholder AI Image */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about .about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about .about-text h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding-bottom: 40px; /* Ajuste para el padding del formulario */
+}
+
+.contact h2 {
+    color: #fff;
+}
+
+.contact p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.contact .contact-info-form {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact .contact-form,
+.contact .contact-details {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: var(--text-color);
+    flex: 1;
+    min-width: 350px; /* Ajusta según el tamaño deseado */
+}
+
+.contact .contact-details h3,
+.contact .contact-form h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact .contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact .contact-form input[type="text"],
+.contact .contact-form input[type="email"],
+.contact .contact-form input[type="tel"],
+.contact .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: var(--font-body);
+}
+
+.contact .contact-form textarea {
+    resize: vertical;
+}
+
+.contact .contact-form .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.contact .contact-details p {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.contact .contact-details a {
+    color: var(--secondary-color);
+}
+
+.contact .contact-details a:hover {
+    color: var(--primary-color);
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 250px;
+    background: url('https://via.placeholder.com/400x250/ccc/555?text=IMAGEN:+MAPA+UBICACI%C3%93N') no-repeat center center/cover; /* Placeholder AI Image */
+    border-radius: 5px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--light-text-color);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin-bottom: 15px;
+}
+
+footer .footer-links a {
+    color: var(--light-text-color);
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .about .about-content {
+        flex-direction: column;
+    }
+
+    .about .about-image {
+        width: 100%;
+        max-width: 400px; /* Limita el ancho de la imagen en móviles */
+        height: 300px;
+    }
+
+    .contact .contact-info-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+
+    .service-grid, .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
