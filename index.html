@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carpintería Americo Sueiro Pérez - Tu experto en madera</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
+
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <img src="./img/logo.jpg" alt="Logo de ASP Carpintegral">
+                <img src="./img/logo.jpg" alt="Logo de ASP Carpintegral" />
             </div>
-            <nav>
+            <button class="hamburger" id="hamburger-menu" aria-label="Abrir menú de navegación">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
@@ -32,8 +38,7 @@
                 <p>Carpintería Integral: Calidad y Experiencia en Madera</p>
                 <a href="#contacto" class="btn">Solicita tu presupuesto</a>
             </div>
-            <div class="hero-image">
-                </div>
+            <div class="hero-image"></div>
         </section>
 
         <section id="servicios" class="services">
@@ -41,28 +46,38 @@
                 <h2>Nuestros Servicios</h2>
                 <div class="service-grid">
                     <div class="service-item">
-                        <div class="service-icon">
-                            </div>
+                        <div class="service-icon"></div>
                         <h3>Carpintería Interior</h3>
-                        <p>Fabricación e instalación de puertas, armarios a medida, revestimientos de paredes, suelos de madera y mucho más para transformar tu hogar.</p>
+                        <p>
+                            Fabricación e instalación de puertas, armarios a medida,
+                            revestimientos de paredes, suelos de madera y mucho más para
+                            transformar tu hogar.
+                        </p>
                     </div>
                     <div class="service-item">
-                        <div class="service-icon">
-                            </div>
+                        <div class="service-icon"></div>
                         <h3>Carpintería Exterior</h3>
-                        <p>Diseño y construcción de pérgolas, porches, cerramientos, vallas y elementos de madera para tu jardín y espacios al aire libre.</p>
+                        <p>
+                            Diseño y construcción de pérgolas, porches, cerramientos, vallas
+                            y elementos de madera para tu jardín y espacios al aire libre.
+                        </p>
                     </div>
                     <div class="service-item">
-                        <div class="service-icon">
-                            </div>
+                        <div class="service-icon"></div>
                         <h3>Mobiliario a Medida</h3>
-                        <p>Creamos muebles únicos que se adaptan perfectamente a tu espacio y estilo, desde librerías hasta mesas y soluciones de almacenamiento.</p>
+                        <p>
+                            Creamos muebles únicos que se adaptan perfectamente a tu espacio
+                            y estilo, desde librerías hasta mesas y soluciones de
+                            almacenamiento.
+                        </p>
                     </div>
                     <div class="service-item">
-                        <div class="service-icon">
-                            </div>
+                        <div class="service-icon"></div>
                         <h3>Restauración</h3>
-                        <p>Devolvemos la vida a tus muebles y estructuras de madera antiguas, preservando su valor y belleza original.</p>
+                        <p>
+                            Devolvemos la vida a tus muebles y estructuras de madera
+                            antiguas, preservando su valor y belleza original.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -73,22 +88,28 @@
                 <h2>Proyectos Destacados</h2>
                 <div class="project-grid">
                     <div class="project-item">
-                        <div class="project-image">
-                            </div>
+                        <div class="project-image"></div>
                         <h3>Cocina de Diseño Rústico</h3>
-                        <p>Diseño e instalación de una cocina completa con acabados en madera maciza y detalles artesanales.</p>
+                        <p>
+                            Diseño e instalación de una cocina completa con acabados en
+                            madera maciza y detalles artesanales.
+                        </p>
                     </div>
                     <div class="project-item">
-                        <div class="project-image">
-                            </div>
+                        <div class="project-image"></div>
                         <h3>Armario a Medida para Dormitorio</h3>
-                        <p>Solución de almacenamiento optimizada con interiores personalizados y puertas lacadas.</p>
+                        <p>
+                            Solución de almacenamiento optimizada con interiores
+                            personalizados y puertas lacadas.
+                        </p>
                     </div>
                     <div class="project-item">
-                        <div class="project-image">
-                            </div>
+                        <div class="project-image"></div>
                         <h3>Pérgola para Jardín</h3>
-                        <p>Estructura de madera tratada para exterior, perfecta para crear un espacio de sombra y relax.</p>
+                        <p>
+                            Estructura de madera tratada para exterior, perfecta para crear
+                            un espacio de sombra y relax.
+                        </p>
                     </div>
                 </div>
                 <a href="#" class="btn-secondary">Ver más proyectos</a>
@@ -98,13 +119,27 @@
         <section id="quienes-somos" class="about">
             <div class="container">
                 <div class="about-content">
-                    <div class="about-image">
-                        </div>
+                    <div class="about-image"></div>
                     <div class="about-text">
                         <h2>Quiénes Somos</h2>
-                        <p>En **Carpintería Americo Sueiro Pérez** combinamos la tradición artesanal con las técnicas más avanzadas para ofrecer soluciones de carpintería de la más alta calidad.</p>
-                        <p>Con años de experiencia en el sector, nos enorgullecemos de la atención al detalle, el compromiso con la excelencia y la satisfacción de nuestros clientes. Desde el diseño inicial hasta la instalación final, trabajamos de cerca contigo para hacer realidad tus ideas, garantizando resultados duraderos y estéticamente impecables.</p>
-                        <p>Nuestra pasión por la madera se refleja en cada proyecto, creando espacios únicos y funcionales que mejoran la calidad de vida de nuestros clientes.</p>
+                        <p>
+                            En **Carpintería Americo Sueiro Pérez** combinamos la tradición
+                            artesanal con las técnicas más avanzadas para ofrecer soluciones
+                            de carpintería de la más alta calidad.
+                        </p>
+                        <p>
+                            Con años de experiencia en el sector, nos enorgullecemos de la
+                            atención al detalle, el compromiso con la excelencia y la
+                            satisfacción de nuestros clientes. Desde el diseño inicial hasta
+                            la instalación final, trabajamos de cerca contigo para hacer
+                            realidad tus ideas, garantizando resultados duraderos y
+                            estéticamente impecables.
+                        </p>
+                        <p>
+                            Nuestra pasión por la madera se refleja en cada proyecto,
+                            creando espacios únicos y funcionales que mejoran la calidad de
+                            vida de nuestros clientes.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -115,38 +150,29 @@
                 <h2>Contacto</h2>
                 <p>¿Tienes un proyecto en mente? ¡Cuéntanos tu idea y te ayudaremos a hacerla realidad!</p>
                 <div class="contact-info-form">
-                    <div class="contact-form">
-                        <form action="#" method="POST">
-                            <div class="form-group">
-                                <label for="nombre">Nombre Completo</label>
-                                <input type="text" id="nombre" name="nombre" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="telefono">Teléfono (opcional)</label>
-                                <input type="tel" id="telefono" name="telefono">
-                            </div>
-                            <div class="form-group">
-                                <label for="mensaje">Tu Mensaje / Descripción del Proyecto</label>
-                                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn">Enviar Mensaje</button>
-                        </form>
-                    </div>
                     <div class="contact-details">
                         <h3>Información de Contacto</h3>
                         <p><strong>Americo Sueiro Pérez</strong></p>
                         <p>C/ Travesía 1ª Derecha 37</p>
                         <p>CP.36770 O Rosal</p>
                         <p>Pontevedra - España</p>
-                        <p>Teléfono: <a href="tel:+34627252029">627 252 029</a></p>
-                        <p>Email: <a href="mailto:info@carpinteriaamericosueiro.com">info@carpinteriaamericosueiro.com</a> (ejemplo, crea uno real)</p>
+                        <p>Teléfono: <a href="tel:+34627252029" class="contact-link"><i class="fas fa-phone-alt"></i>
+                                627 252 029</a></p>
+                        <p>Email: <a href="mailto:info@carpinteriaamericosueiro.com" class="contact-link"><i
+                                    class="fas fa-envelope"></i> info@carpinteriaamericosueiro.com</a></p>
                         <div class="map-placeholder">
                             <p>Aquí irá un mapa interactivo (requiere API de Google Maps)</p>
                         </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Envíanos un mensaje</h3>
+                        <p>¿Prefieres escribirnos? Haz clic aquí para abrir tu gestor de correo electrónico y
+                            detallarnos tu proyecto.</p>
+                        <a href="mailto:info@carpinteriaamericosueiro.com?subject=Consulta%20desde%20la%20web"
+                            class="btn">Enviar Correo Electrónico</a>
+                        <h3 style="margin-top: 30px;">O llámanos directamente</h3>
+                        <p>Si lo prefieres, puedes contactarnos por teléfono para una atención más rápida.</p>
+                        <a href="tel:+34627252029" class="btn-secondary">Llamar Ahora</a>
                     </div>
                 </div>
             </div>
@@ -155,15 +181,21 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Americo Sueiro Pérez - Carpintería Integral. Todos los derechos reservados.</p>
+            <p>
+                &copy; 2025 Americo Sueiro Pérez - Carpintería Integral. Todos los
+                derechos reservados.
+            </p>
             <div class="footer-links">
-                <a href="#">Aviso Legal</a>
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Política de Cookies</a>
+                <a href="aviso-legal.html">Aviso Legal</a>
+                <a href="politica-privacidad.html">Política de Privacidad</a>
+                <a href="politica-cookies.html">Política de Cookies</a>
             </div>
         </div>
     </footer>
-
+    <button id="scrollToTopBtn" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script src="js/script.js"></script>
 </body>
+
 </html>

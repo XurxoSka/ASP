@@ -1,17 +1,24 @@
 /* Variables CSS para facilitar la gestión de colores y fuentes */
 :root {
-    --primary-color: #A36A00; /* Un tono de madera oscuro o dorado, similar al logo */
-    --secondary-color: #2c3e50; /* Un azul grisáceo oscuro para texto o fondos contrastantes */
-    --accent-color: #e67e22; /* Un naranja vibrante para llamadas a la acción o highlights */
-    --light-bg: #f8f8f8; /* Fondo claro para secciones */
-    --dark-bg: #34495e; /* Fondo oscuro para footer o secciones específicas */
+    --primary-color: #A36A00;
+    /* Un tono de madera oscuro o dorado, similar al logo */
+    --secondary-color: #2c3e50;
+    /* Un azul grisáceo oscuro para texto o fondos contrastantes */
+    --accent-color: #e67e22;
+    /* Un naranja vibrante para llamadas a la acción o highlights */
+    --light-bg: #f8f8f8;
+    /* Fondo claro para secciones */
+    --dark-bg: #34495e;
+    /* Fondo oscuro para footer o secciones específicas */
     --text-color: #333;
     --light-text-color: #eee;
-    --font-heading: 'Roboto Slab', serif; /* Una fuente con serifa para títulos, le da un toque clásico y profesional */
-    --font-body: 'Open Sans', sans-serif; /* Una fuente sans-serif legible para el cuerpo del texto */
+    --font-heading: 'Roboto Slab', serif;
+    /* Una fuente con serifa para títulos, le da un toque clásico y profesional */
+    --font-body: 'Open Sans', sans-serif;
+    /* Una fuente sans-serif legible para el cuerpo del texto */
 }
 
-/* Importar fuentes de Google Fonts (puedes elegir otras si lo prefieres) */
+/* Importar fuentes de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto+Slab:wght@400;700&display=swap');
 
 /* Reset y estilos básicos */
@@ -27,6 +34,8 @@ body {
     color: var(--text-color);
     background-color: #fff;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Evita el scroll horizontal */
 }
 
 .container {
@@ -35,7 +44,9 @@ body {
     padding: 0 20px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--font-heading);
     color: var(--secondary-color);
     margin-bottom: 20px;
@@ -69,7 +80,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-color);
+    background-color: var(--accent-color);
 }
 
 .btn {
@@ -104,15 +115,13 @@ a:hover {
     color: #fff;
 }
 
-/* Header */
+/* --- Header --- */
 header {
     background-color: #fff;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* z-index: 1000; */
 }
 
 header .container {
@@ -122,7 +131,28 @@ header .container {
 }
 
 .logo img {
-    height: 60px; /* Ajusta según el tamaño de tu logo */
+    height: 60px;
+    /* Ajusta según el tamaño de tu logo */
+}
+
+/* Botón de hamburguesa (oculto por defecto en desktop) */
+.hamburger {
+    display: none;
+    /* Oculto en pantallas grandes */
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+    /* Asegura que esté por encima del menú cuando se muestre */
+}
+
+/* Navegación para desktop */
+nav {
+    display: block;
+    /* Por defecto visible en desktop */
 }
 
 nav ul {
@@ -157,7 +187,7 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
     position: relative;
     height: 70vh;
@@ -166,7 +196,8 @@ nav ul li a:hover::after {
     justify-content: center;
     color: #fff;
     text-align: center;
-    overflow: hidden; /* Oculta partes de la imagen si se desbordan */
+    overflow: hidden;
+    /* Oculta partes de la imagen si se desbordan */
 }
 
 .hero-image {
@@ -175,9 +206,10 @@ nav ul li a:hover::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://via.placeholder.com/1920x800/2c3e50/ffffff?text=IMAGEN:+Taller+de+carpinter%C3%ADa+moderno+con+carpintero') no-repeat center center/cover; /* Placeholder AI Image */
+    background: url('https://via.placeholder.com/1920x800/2c3e50/ffffff?text=IMAGEN:+Taller+de+carpinter%C3%ADa+moderno+con+carpintero') no-repeat center center/cover;
     z-index: -1;
-    filter: brightness(0.6); /* Oscurece la imagen para que el texto resalte */
+    filter: brightness(0.6);
+    /* Oscurece la imagen para que el texto resalte */
 }
 
 .hero .container {
@@ -191,7 +223,7 @@ nav ul li a:hover::after {
     font-weight: 300;
 }
 
-/* Sections generales */
+/* --- Sections generales --- */
 section {
     padding: 80px 0;
 }
@@ -200,26 +232,44 @@ section:nth-child(even) {
     background-color: var(--light-bg);
 }
 
-/* Services Section */
+/* --- Services Section --- */
 .services .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    /* Usamos flexbox para el diseño de la cuadrícula */
+    flex-wrap: wrap;
+    /* Permite que los ítems salten a la siguiente línea */
+    justify-content: center;
+    /* Centra los ítems cuando no ocupan todo el ancho */
     gap: 30px;
     margin-top: 40px;
     text-align: center;
+    align-items: stretch;
+    /* Asegura que todos los items de una fila tengan la misma altura */
 }
 
 .services .service-item {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 280px;
+    /* flex-grow, flex-shrink, flex-basis: Permite que los items crezcan/encojan con una base de 280px */
+    max-width: 350px;
+    /* Limita el ancho máximo para que no se estiren demasiado en filas con pocos elementos */
+    display: flex;
+    /* Convierte el item en un contenedor flex para su contenido */
+    flex-direction: column;
+    /* Apila el contenido verticalmente */
+    justify-content: flex-start;
+    /* Alinea el contenido en la parte superior */
+    height: 100%;
+    /* Permite que el item se estire dentro de la fila de flex */
 }
 
 .services .service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .services .service-icon {
@@ -233,43 +283,62 @@ section:nth-child(even) {
     align-items: center;
     font-size: 2.5em;
     color: #fff;
-    overflow: hidden; /* Para las imágenes placeholder */
+    overflow: hidden;
+    /* Para las imágenes placeholder */
 }
 
-.services .service-icon img {
-    max-width: 70%;
-    max-height: 70%;
-    object-fit: contain;
-    filter: brightness(0) invert(1); /* Para que los iconos placeholder se vean blancos */
+/* URLs de placeholder para los iconos mientras generas los reales */
+.services .service-item:nth-child(1) .service-icon {
+    background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=DOOR') no-repeat center center/70%;
 }
 
-/* Puedes usar URLs de placeholder para los iconos mientras generas los reales */
-.services .service-item:nth-child(1) .service-icon { background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=DOOR') no-repeat center center/70%; }
-.services .service-item:nth-child(2) .service-icon { background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=GARDEN') no-repeat center center/70%; }
-.services .service-item:nth-child(3) .service-icon { background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=FURNITURE') no-repeat center center/70%; }
-.services .service-item:nth-child(4) .service-icon { background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=REPAIR') no-repeat center center/70%; }
+.services .service-item:nth-child(2) .service-icon {
+    background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=GARDEN') no-repeat center center/70%;
+}
 
+.services .service-item:nth-child(3) .service-icon {
+    background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=FURNITURE') no-repeat center center/70%;
+}
+
+.services .service-item:nth-child(4) .service-icon {
+    background: url('https://via.placeholder.com/80x80/A36A00/ffffff?text=REPAIR') no-repeat center center/70%;
+}
 
 .services .service-item h3 {
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-/* Projects Section */
+/* --- Projects Section --- */
 .projects .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    /* Usamos flexbox aquí también */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centra los ítems */
     gap: 30px;
     margin-top: 40px;
+    align-items: stretch;
+    /* Crucial para alturas iguales en las tarjetas */
 }
 
 .projects .project-item {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
+    flex: 1 1 300px;
+    /* Base de 300px, permite crecer/encoger */
+    max-width: 400px;
+    /* Limita para evitar estiramientos excesivos */
+    display: flex;
+    /* Convierte el item en un contenedor flex para su contenido */
+    flex-direction: column;
+    /* Apila el contenido verticalmente */
+    height: 100%;
+    /* Permite que el item se estire dentro de la fila de flex */
 }
 
 .projects .project-item:hover {
@@ -278,9 +347,11 @@ section:nth-child(even) {
 
 .projects .project-image {
     width: 100%;
-    height: 250px; /* Altura fija para las imágenes del proyecto */
+    height: 250px;
+    /* Altura fija para las imágenes del proyecto */
     background-size: cover;
     background-position: center;
+    /* Las siguientes propiedades son para el texto placeholder, si se usa */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -289,18 +360,17 @@ section:nth-child(even) {
     font-weight: bold;
 }
 
-/* Placeholder AI Images for projects */
+/* Imágenes reales para proyectos (asegúrate de que las rutas sean correctas) */
 .projects .project-item:nth-child(1) .project-image {
-background: url(../img/foto2.png);
-background-size: cover;
+    background-image: url(../img/foto2.png);
 }
+
 .projects .project-item:nth-child(2) .project-image {
     background-image: url(../img/foto1.png);
-    background-size: cover;
 }
+
 .projects .project-item:nth-child(3) .project-image {
     background-image: url(../img/foto3.png);
-    background-size: cover;
 }
 
 .projects .project-item h3 {
@@ -309,34 +379,42 @@ background-size: cover;
 }
 
 .projects .project-item p {
+    flex-grow: 1;
+    /* Hace que el párrafo ocupe el espacio restante, empujando el siguiente elemento hacia abajo */
     padding: 0 20px 20px;
 }
 
 .projects .btn-secondary {
-    margin-top: 40px;
+    margin-top: 20px;
+    /* Ajusta este margen si es necesario */
+    margin-bottom: 20px;
+    /* Añadido para dar espacio si se usa dentro del item */
     text-align: center;
-    display: block; /* Para centrar el botón */
+    display: block;
+    /* Para que el botón ocupe su propio espacio */
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
 
-
-/* About Section */
+/* --- About Section --- */
 .about .about-content {
     display: flex;
     align-items: center;
     gap: 40px;
-    flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
+    flex-wrap: wrap;
+    /* Para que se adapte en pantallas pequeñas */
+    justify-content: center;
+    /* Centra el contenido si hay espacio */
 }
 
 .about .about-image {
     flex: 1;
     min-width: 300px;
     height: 400px;
-    background: url('https://via.placeholder.com/400x500/2c3e50/ffffff?text=IMAGEN:+Retrato+Americo+Sueiro') no-repeat center center/cover; /* Placeholder AI Image */
+    background: url('https://via.placeholder.com/400x500/2c3e50/ffffff?text=IMAGEN:+Retrato+Americo+Sueiro') no-repeat center center/cover;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about .about-text {
@@ -349,11 +427,11 @@ background-size: cover;
     margin-bottom: 20px;
 }
 
-/* Contact Section */
+/* --- Contact Section --- */
 .contact {
     background-color: var(--secondary-color);
     color: var(--light-text-color);
-    padding-bottom: 40px; /* Ajuste para el padding del formulario */
+    padding-bottom: 40px;
 }
 
 .contact h2 {
@@ -378,10 +456,10 @@ background-size: cover;
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     color: var(--text-color);
     flex: 1;
-    min-width: 350px; /* Ajusta según el tamaño deseado */
+    min-width: 350px;
 }
 
 .contact .contact-details h3,
@@ -440,7 +518,7 @@ background-size: cover;
 .map-placeholder {
     width: 100%;
     height: 250px;
-    background: url('https://via.placeholder.com/400x250/ccc/555?text=IMAGEN:+MAPA+UBICACI%C3%93N') no-repeat center center/cover; /* Placeholder AI Image */
+    background: url('https://via.placeholder.com/400x250/ccc/555?text=IMAGEN:+MAPA+UBICACI%C3%93N') no-repeat center center/cover;
     border-radius: 5px;
     margin-top: 20px;
     display: flex;
@@ -452,8 +530,7 @@ background-size: cover;
     text-align: center;
 }
 
-
-/* Footer */
+/* --- Footer --- */
 footer {
     background-color: var(--dark-bg);
     color: var(--light-text-color);
@@ -482,8 +559,63 @@ footer .footer-links a:hover {
     color: var(--primary-color);
 }
 
-/* Responsive Design */
+
+#scrollToTopBtn {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    /* Fijo en la pantalla */
+    bottom: 25px;
+    /* Separación del borde inferior */
+    right: 25px;
+    /* Separación del borde derecho */
+    z-index: 999;
+    /* Asegura que esté por encima de otros elementos */
+    background-color: var(--primary-color);
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del icono */
+    border: none;
+    border-radius: 50%;
+    /* Forma circular */
+    width: 50px;
+    /* Ancho del botón */
+    height: 50px;
+    /* Alto del botón */
+    font-size: 1.5em;
+    /* Tamaño del icono */
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para que destaque */
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    /* Transiciones suaves */
+    opacity: 0;
+    /* Inicialmente transparente para la animación */
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--accent-color);
+    /* Cambia de color al pasar el ratón */
+    transform: translateY(-3px);
+    /* Pequeño efecto de elevación */
+}
+
+/* Estado visible del botón */
+#scrollToTopBtn.show {
+    opacity: 1;
+    display: flex;
+    /* Lo mostramos con flex para centrar el icono */
+    justify-content: center;
+    align-items: center;
+}
+
+/* -- Media Queries para Responsividad --- */
+
+/* --- Media Queries para Responsividad --- */
+
 @media (max-width: 768px) {
+
+    /* Ajustes generales para pantallas medianas */
     h1 {
         font-size: 2.5em;
     }
@@ -492,24 +624,130 @@ footer .footer-links a:hover {
         font-size: 2em;
     }
 
+    /* ****************************************************** */
+    /* *** AJUSTES ESPECÍFICOS PARA HEADER Y MENÚ MÓVIL *** */
+    /* ****************************************************** */
+
+    /* El header completo se vuelve fijo en la parte superior */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1010;
+        /* Header por encima del menú */
+    }
+
     header .container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
     }
 
+    /* El logo dentro del header fijo */
     .logo {
-        margin-bottom: 15px;
+        margin-bottom: 0;
+        /* Asegura que el logo esté dentro del header fijo y tenga un z-index adecuado si es necesario */
+        position: relative;
+        /* Para que su z-index tenga efecto si el logo está dando problemas */
+        z-index: 1011;
+        /* Mayor que el header para asegurarse, aunque con el del header debería bastar */
     }
 
-    nav ul {
+    .logo img {
+        height: 50px;
+        /* Tamaño del logo en móvil */
+        width: auto;
+    }
+
+    /* Botón de hamburguesa */
+    .hamburger {
+        display: block;
+        /* Visible en móvil */
+        position: relative;
+        /* Para que su z-index funcione correctamente dentro del header */
+        z-index: 1050;
+        /* ¡MUY IMPORTANTE! Debe estar por encima del menú lateral (1000) y del header (1010) */
+        color: var(--primary-color);
+        font-size: 2em;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    /* Icono de la 'X' cuando el menú está abierto */
+    .hamburger.active .fa-bars:before {
+        content: "\f00d";
+        /* Cambia a una 'X' */
+    }
+
+    /* Menú de navegación principal (sidebar) */
+    #main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Sigue saliendo de la derecha */
+        width: 100%;
+        /* <-- ¡Cambiado a 100%! */
+        height: 100%;
+        background-color: var(--light-bg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estado ACTIVO del menú: se desliza para ser visible */
+    #main-nav.active {
+        right: 0;
+        /* El menú se desliza a la posición visible */
+    }
+
+    /* Lista de enlaces dentro del menú móvil */
+    #main-nav ul {
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    /* Enlaces individuales del menú móvil */
+    #main-nav ul li a {
+        color: var(--primary-color);
+        font-size: 1.5em;
+        display: block;
+        padding: 10px 0;
+        width: 100%;
     }
 
+    /* Clase para evitar el scroll del body cuando el menú está abierto */
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+    /* Compensar el contenido principal por el header fijo */
+    main {
+        margin-top: 70px;
+        /* Ajusta según la altura de tu header fijo en móvil (ej. 10px padding + 50px logo + 10px padding = 70px aprox) */
+    }
+
+
+    /* ****************************************************** */
+    /* *** FIN AJUSTES ESPECÍFICOS PARA HEADER Y MENÚ MÓVIL *** */
+    /* ****************************************************** */
+
+
+    /* Resto de tus estilos para móvil que no afectan al header/menú */
     .hero {
         height: 60vh;
     }
@@ -520,15 +758,39 @@ footer .footer-links a:hover {
 
     .about .about-image {
         width: 100%;
-        max-width: 400px; /* Limita el ancho de la imagen en móviles */
+        max-width: 400px;
         height: 300px;
     }
 
     .contact .contact-info-form {
         flex-direction: column;
     }
+
+    .service-grid,
+    .project-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services .service-item,
+    .projects .project-item {
+        max-width: 90%;
+        width: 100%;
+    }
+
+    /* Botón de volver arriba */
+    #scrollToTopBtn {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+        z-index: 999;
+        /* Por debajo del menú (1000) y hamburguesa (1050) */
+    }
 }
 
+/* Media Query para pantallas aún más pequeñas (smartphones muy pequeños) */
 @media (max-width: 480px) {
     h1 {
         font-size: 2em;
@@ -541,8 +803,19 @@ footer .footer-links a:hover {
     .btn {
         padding: 10px 20px;
     }
+}
 
-    .service-grid, .project-grid {
-        grid-template-columns: 1fr;
+/* Media Query para pantallas aún más pequeñas (smartphones muy pequeños) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .btn {
+        padding: 10px 20px;
     }
 }
